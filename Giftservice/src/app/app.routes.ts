@@ -6,8 +6,8 @@ import { CityComponent } from './components/country/city/city.component';
 import { InsertCityComponent } from './components/country/city/insert-city/insert-city.component';
 
 export const routes: Routes = [
-    {
-        path: 'moduloUbicacion', component: ModuloUbicacionComponent,
+  {
+    path: 'moduloUbicacion', component: ModuloUbicacionComponent,
     children: [
       {
         path: 'paises', component: CountryComponent,
@@ -18,5 +18,5 @@ export const routes: Routes = [
         children: [{ path: 'registro', component: InsertCityComponent }]
       },
     ]
-    }
+  }
 ];
