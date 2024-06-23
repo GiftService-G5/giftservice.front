@@ -1,0 +1,41 @@
+<div class="container">
+    <h1 mat-dialog-title>Nuevo Emprendimiento</h1>
+    <div>
+        <form [formGroup]="form" (submit)="onSubmit()">
+            <mat-form-field>
+                <mat-label>Emprendimiento</mat-label>
+                <input matInput formControlName="nameEntrepreneurship" required />
+                @if (form.get("nameEntrepreneurship")?.hasError("required")) {
+                <mat-error>Debe ingresar un emprendimiento</mat-error>
+                }
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>RUC</mat-label>
+                <input matInput formControlName="rucEntrepreneurship" required />
+                @if (form.get("rucEntrepreneurship")?.hasError("required")) {
+                <mat-error>Debe ingresar un RUC</mat-error>
+                }
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Ubicación</mat-label>
+                <input matInput formControlName="locationEntrepreneurship" required />
+                @if (form.get("locationEntrepreneurship")?.hasError("required")) {
+                <mat-error>Debe ingresar la ubicación</mat-error>
+                }
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Teléfono</mat-label>
+                <input matInput formControlName="phoneEntrepreneurship" required />
+                @if (form.get("phoneEntrepreneurship")?.hasError("required")) {
+                <mat-error>Debe ingresar un teléfono</mat-error>
+                }
+            </mat-form-field>
+            <br>
+            <button [disabled]="form.invalid" mat-raised-button mat-dialog-close color="primary" class="button-margin">Registrar</button>
+            <button mat-raised-button (click)="cancelar()" color="primary">Cancelar</button>
+        </form>
+    </div>
+</div>

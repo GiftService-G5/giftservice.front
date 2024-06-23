@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="title-container">
+    <h2 class="title">Productos con calificación menor a tres</h2>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Columna Id del Producto -->
+    <ng-container matColumnDef="idProducto">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center">
+        Id del Producto
+      </th>
+      <td mat-cell *matCellDef="let element" style="text-align: center">
+        {{ element.idProducto }}
+      </td>
+    </ng-container>
+
+    <!-- Columna Nombre del Producto -->
+    <ng-container matColumnDef="nombreProducto">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center">
+        Nombre del Producto
+      </th>
+      <td mat-cell *matCellDef="let element" style="text-align: center">
+        {{ element.nameProduct}}
+      </td>
+    </ng-container>
+
+    <!-- Columna Puntaje -->
+    <ng-container matColumnDef="puntaje">
+      <th mat-header-cell *matHeaderCellDef style="text-align: center">
+        Puntaje Obtenido
+      </th>
+      <td mat-cell *matCellDef="let element" style="text-align: center">
+        {{ element.lowScore }}
+      </td>
+    </ng-container>
+
+    <!-- Define las filas y columnas que se mostrarán en la tabla -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
