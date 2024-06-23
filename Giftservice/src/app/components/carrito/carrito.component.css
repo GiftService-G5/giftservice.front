@@ -1,0 +1,154 @@
+/* .container {
+    max-width: 100%;
+} */
+
+.mat-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    display: flex;
+    
+}
+
+.img-fluid {
+    max-width: 80%;
+    height: auto;
+}
+
+.text-primary{
+    color: #043971;
+}
+.priceTotalByProduct{
+    font-size: 3rem;
+    color: #040404;
+    font-weight: bold;
+}
+/* .fs-4 {
+    font-size: 1.5rem;
+} */
+
+.text-muted {
+    color: #6c757d;
+}
+.color-price-pro{
+    font-size: 22px;
+    color: #bd4a0c;
+    margin-right: 2px;
+}
+
+.text-decoration-line-through {
+    text-decoration: line-through;
+}
+
+
+
+/* .justify-content-between {
+    justify-content: space-between;
+} */
+
+/* .align-items-center {
+    align-items: center;
+} */
+
+.me-2 {
+    margin-right: 0.5rem;
+}
+.row-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.container-all-products{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* width: ;  */
+    min-width: 680px;
+    gap: 20px;
+}
+.card-product{  
+    width: 90%;
+    /* min-width: 70%; */
+    /* position: relative; */
+}
+.container-img{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 150px;
+}
+.container-img img{
+    width: 100%;
+}
+
+.container-final{
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    /* width: 50%; */
+}
+
+.container-detail-page{
+    min-width: 30%;
+    width: 150px;
+}
+
+.container-prices{
+    /* width: 100% */
+    gap: 1px;
+
+}
+.container-accions{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+}
+
+/* ----------------- */
+
+.titulo-resumen{
+    text-align: center;
+    margin: 2px;
+    font-weight: bold;
+
+
+}
+.container-detail-page mat-card div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-detail-page mat-card div mat-card-content{
+    padding: 2px;
+    /* width: 100%; */
+}
+.fw-bold {
+    /* font-weight: bold; */
+    font-size: larger;
+
+}
+.TotalFinal{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.container-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-BotonPag{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.container-BotonPag button{
+    margin: 5px;
+    color: #040404;
+    background-color: yellow;
+}

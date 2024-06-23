@@ -1,0 +1,152 @@
+<div class="container m-20">
+    <div class="row row-container mt-3 mb-3">
+        <!-- =========================================GALERIA DE IMAGENES============================================= -->
+        <div class="col-6 container-galery">
+            <div class="image-gallery">
+                <div class="main-image">
+                    <button (click)="previousImage()" class="nav-button left">&#10094;</button>
+                    <img [src]="selectedImage" alt="Selected Image">
+                    <button (click)="nextImage()" class="nav-button right">&#10095;</button>
+                </div>
+                <div class="thumbnails">
+                    <img *ngFor="let image of allImages" [src]="image.imageRoute"
+                        (click)="selectImage(image.imageRoute)" [class.selected]="image.imageRoute === selectedImage">
+                </div>
+            </div>
+        </div>
+        <!-- =========================================DETALLE DEL PRODUCTO============================================= -->
+        <div class="col-6 container-general-producto">
+            <div class="container-detalle-producto">
+                <h3 class="emprendedor">{{productEnCompra.entrepreneurship.nameEntrepreneurship}}</h3>
+                <h3 class="nombre-producto">{{productEnCompra.nameProduct}}</h3>
+                <p class="descripcion">{{productEnCompra.descriptionProduct}}</p>
+                <mat-card-content class="precio">S/ {{cantidad*productEnCompra.priceProduct}}</mat-card-content>
+                <div class="container-calculo-cantidad">
+                    <div class="row col-6">
+                        <div class="col-auto">
+                            <button mat-icon-button color="accent"
+                                (click)="decrease()" [disabled]="MMCantidad_decre"><mat-icon>remove</mat-icon></button>
+                        </div>
+                        <div class="col-auto">
+                            <h3 class="count-display">{{cantidad}}</h3>
+                        </div>
+                        <div class="col-auto">
+                            <button mat-icon-button (click)="increase()"  [disabled]="MMCantidad_incre"><mat-icon>add</mat-icon></button>
+                        </div>
+                    </div>
+                    <button class="row col-6" (click)="AddToCart()" class="btn-carrito">
+                        <mat-icon>shopping_cart_checkout </mat-icon> Agregar a carrito
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <h3>¿Deseas agrear un detalle perzonalizado?</h3>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Elige por el nombre</mat-label>
+                            <mat-select #detalleSelect (selectionChange)="onDetailSelect($event)">
+                                <mat-option [value]="100">Sin personalización</mat-option>
+                                <mat-option *ngFor="let c of allDetailByProduct" [value]="c.idPersonalizedDetail">
+                                    {{c.namePersonalizedDetail }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class="row">
+                            <div class="col-3" *ngFor="let detail of allDetailByProduct">
+                                <mat-card>
+                                    <img (click)="selectImage(detail.imagePersonalizedDetail)" mat-card-image
+                                        [src]="detail.imagePersonalizedDetail"
+                                        alt="Image of {{ detail.imagePersonalizedDetail }}">
+                                    <mat-card-content>{{ detail.namePersonalizedDetail }}</mat-card-content>
+                                    <mat-card-content> mas S/{{ detail.additionalPricePersonalizedDetail
+                                        }}</mat-card-content>
+                                </mat-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- =========================================TODAS LAS RESEÑAS============================================= -->
+    <!-- <br>
+    <br> -->
+    <div class="container  container-coments mb-10">
+        <mat-divider></mat-divider>
+        <h3>Comentarios del producto</h3>
+
+        <div class="row container-header-comments">
+            <div class="col-6">
+                <div class="row">
+                    <mat-card>
+                        <p><b>5</b>/5</p>
+                        <p>Puedes puntuar los productos entre 1 a 5 estrellas</p>
+                        <div>
+                            <mat-icon fontIcon="star" class="text-warning"></mat-icon>
+                            <mat-icon fontIcon="star" class="text-warning"></mat-icon>
+                            <mat-icon fontIcon="star" class="text-warning"></mat-icon>
+                            <mat-icon fontIcon="star" class="text-warning"></mat-icon>
+                            <mat-icon fontIcon="star" class="text-warning"></mat-icon>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="col-6 container-star-register">
+                <mat-card class="container-register" (click)="OpenModalInsert(idProduct,selectedImage)">
+                    <div class="row">
+                        <div class="col-6">
+                            <mat-card-content class="fraseP"><b>Comenta este producto</b></mat-card-content>
+                        </div>
+                        <div class="col-6 iconos">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#FFD700">
+                                <path
+                                    d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#FFD700">
+                                <path
+                                    d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#FFD700">
+                                <path
+                                    d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#FFD700">
+                                <path
+                                    d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                                fill="#FFD700">
+                                <path
+                                    d="M333.33-259 480-347l146.67 89-39-166.67 129-112-170-15L480-709l-66.67 156.33-170 15 129 112.34-39 166.33ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-353.33Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <!-- todos los cards ============================================ -->
+        <div class="row container-comments mt-3">
+            <mat-card class="card-comment" *ngFor="let review of allReviews">
+                <div class="row">
+                    <div class="col-7">
+                        <mat-card-content><b>{{review.titleReviews}}</b></mat-card-content>
+                        <mat-card-content> {{review.users.realname}}</mat-card-content>
+                    </div>
+                    <div class="col-5 iconos">
+                        <mat-icon *ngFor="let star of stars; let i = index"
+                            [ngClass]="{ 'filled': i < review.scoreReviews}">
+                            star
+                        </mat-icon>
+                        <mat-card-content>{{review.dateReviews}}</mat-card-content>
+                    </div>
+                </div>
+                <mat-card-content>{{review.commentReviews}}</mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

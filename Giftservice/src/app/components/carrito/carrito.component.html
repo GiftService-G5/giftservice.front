@@ -1,0 +1,72 @@
+<div class="container mt-4">
+    <h2>CARRITO</h2>
+    <div class="row row-container">
+        <div class="col-8  container-all-products">
+            <mat-card class="d-flex card-product" *ngFor="let item of myCart$ | async">
+                <div class="row">
+                    <div class="col-3 container-img">
+                        <button mat-icon-button (click)="removeItem(item.product.idProduct)">
+                            <mat-icon class="c-red">delete</mat-icon>
+                        </button>
+                        <img mat-card-image [src]="item.imagenProducto.imageRoute" alt="Imagen del producto" class="img-fluid">
+                    </div>
+                    <div class="col-5">
+                        <mat-card-content>
+                            <b><a href="#">{{item.product.nameProduct}}</a></b>
+                        </mat-card-content>
+                        <mat-card-content>{{item.product.descriptionProduct}}</mat-card-content>
+                        <mat-card-content>datelle add: {{item.personalized.namePersonalizedDetail}}</mat-card-content>
+                    </div>
+                    <div class="col-4 container-final">
+                        <div class="container-prices">
+                            <mat-card-content class="d-flex">
+                                <span class="fs-6 color-price-pro">Precio: S/{{item.product.priceProduct}} </span>
+                                <span class="text-muted text-decoration-line-through">S/
+                                    {{item.product.priceProduct+10}}</span>
+                            </mat-card-content>
+                            <mat-card-content class="d-flex">
+                                <span class="text-primary fs-8"> Precio add: S/{{item.personalized.additionalPricePersonalizedDetail}}</span>
+                            </mat-card-content>
+                            <mat-divider></mat-divider>
+                            <mat-card-content class="d-flex w-100%">
+                                <span class=" fs-6 priceTotalByProduct">Total: S/{{item.product.priceProduct*item.cantidad + item.personalized.additionalPricePersonalizedDetail}}</span>
+                            </mat-card-content>
+                        </div>
+                        <div class="container-accions">
+                            <button mat-icon-button aria-label="Disminuir cantidad" (click)="decreaseQuantity(item.product.idProduct)">
+                                <mat-icon>remove</mat-icon>
+                            </button>
+                            <span>{{item.cantidad}}</span>
+                            <button mat-icon-button aria-label="Aumentar cantidad" (click)="increaseQuantity(item.product.idProduct)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+
+        <div class="col-4 container-detail-page ">
+            <h2 class="titulo-resumen">Resumen de orden</h2>
+            <mat-card class="m-2 p-2">
+                <div class="d-flex">
+                    <mat-card-content class="fw-bold">Cantidad de productos:</mat-card-content>
+                    <mat-card-content class="fw-bold">{{totalQuantity}}</mat-card-content>
+                </div>
+                <div  *ngFor="let item of myCart$ | async"  class="d-flex">
+                    <mat-card-content class="p-2">{{item.product.nameProduct}}</mat-card-content>
+                    <mat-card-content class="p-2">S/ {{item.product.priceProduct*item.cantidad}}</mat-card-content>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="d-flex  TotalFinal">
+                    <mat-card-content class="TotalFinal">Precio Total del pedido:</mat-card-content>
+                    <mat-card-content class="TotalFinal">S/ {{totalPrice}}</mat-card-content>
+                </div>
+            </mat-card>
+            <div class="container-BotonPag">
+                <button mat-flat-button routerLink="/paymentGateway" color="primary">REALIZAR EL PAGO</button>
+            </div>
+            <!-- <button mat-flat-button routerLink="/personalizedDetail/nuevo" color="primary">REALIZAR EL PAGO</button> -->
+        </div>
+    </div>
+</div>

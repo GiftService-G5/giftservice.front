@@ -1,0 +1,8 @@
+.container {
+    text-align: center;
+    margin: auto;
+}
+
+.button-margin {
+    margin-right: 20px; /* Ajusta el margen según necesites */
+}

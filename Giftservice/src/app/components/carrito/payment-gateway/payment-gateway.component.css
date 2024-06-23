@@ -1,0 +1,120 @@
+.mat-stepper-horizontal {
+    margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+    margin-top: 16px;
+}
+
+.container-group1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-gr1{
+    width: 50%;
+    margin: 20px; 
+}
+
+.container-input-g1{
+    display: flex;
+    width: 100%;
+}
+
+img{
+    width: 100px;
+}
+
+.card-product{
+    margin: 8px 0; 
+}
+
+
+/*  */
+
+.container-secondGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-ubicacion {
+    margin-bottom: 20px;
+}
+
+.secondform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+.secondform mat-form-field,.secondform mat-select{
+    width: 100%;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+
+/* ------------- */
+.titulo-resumen{
+    text-align: center;
+    margin: 2px;
+    font-weight: bold;
+
+
+}
+.container-detail-page mat-card div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-detail-page mat-card div mat-card-content{
+    padding: 2px;
+    /* width: 100%; */
+}
+.fw-bold {
+    /* font-weight: bold; */
+    font-size: larger;
+
+}
+.TotalFinal{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.container-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-BotonPag{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.container-BotonPag button{
+    margin: 5px;
+    color: #040404;
+    background-color: red;
+}

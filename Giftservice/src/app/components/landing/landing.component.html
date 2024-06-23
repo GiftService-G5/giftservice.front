@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/bootstrap.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+
+    <title>GiftService</title>
+</head>
+<body >
+    <div class="capa"></div>
+    <nav  class="nav-bar-container">
+        <div class="logo-content">
+            <img class="logo" src="assets/GiftService.png" alt="logo de la aplicación de regalo">
+            <div class="searching">
+                <input>
+                <img src="assets/search_icon.png">
+            </div>
+        </div>
+        <div class="labeling">
+            <ul>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#app">App</a></li>
+                <li><a href="#soporte">Soporte</a></li>
+            </ul>
+        </div>
+        <div class="btn-content">
+            <button style="margin-left:2rem ;"><a routerLink="/login">Iniciar Sesión</a></button>
+            <button style="margin-left:1rem ;"><a href="">Registrarse</a></button>
+        </div>
+        <div class="menu-btn">
+            <i id="btn-menu" class="fa-solid fa-bars iconmenu"></i>
+        </div>
+        <div class="content-slider" id="content-slider">
+            <ul>
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#app">App</a></li>
+                <li><a href="#soporte">Soporte</a></li>
+               
+            </ul>
+            <div class="btn-content-search">
+                <button>Iniciar Sesión</button>
+                <button>Registrarse</button>
+            </div>
+        </div>
+    </nav>
+    <section class="presentation" >
+        <div class="name">
+            <div class="text-title">
+            <h1>Gift</h1>
+            <h1>Service</h1>
+            </div>
+         
+        </div>
+        <div class="descripcion-slogan" style="overflow-y: hidden;">
+            <div class="mediaquerytitle"><h2>Donde regalar es un placer.</h2></div>
+            <h2 class="orga-title">Donde regalar</h2>
+            <h2 class="base-title"> es un placer.</h2>
+            <h3>Únete y disfruta con nosotros de la experiencia</h3>
+            <button id="btn-know">Conocenos</button>
+        </div>
+ 
+    </section>
+    <section class="sobre-nosotros" id="nosotros">
+        <div class="encabezado">
+            <div class="titulo-nosotros">
+                <h2>SOBRE NOSOTROS</h2>
+            </div>
+        </div>
+        <div class="first-text">
+            <p>Nosotros somos estudiantes emprendedores de la UPC que se dedica a ayudar a las personas con poco tiempo para armar un detalle desde cualquier lugar. Nuestro objetivo principal es reducir la dificultad y el estres causados a la eleccion del regalo perfecto para cualquier ocasion. Brindamos un servicio personalizado que se adapta a las necesidades individuales de cada cliente.
+            </p>
+          </div>
+          <div class="second-part">
+              <img src="assets/GiftService.png" alt="logo de la aplicación de gift service">
+              <div class="part-new">
+                  <h4>Gift Service</h4>
+                  <div class="line-bee"></div>
+                  <p>   Esta es una aplicación pensada en las personas.</p>
+              </div>             
+          </div>
+      </section>
+      <section class="servicios" id="servicios">
+          <div class="title-content-ser">
+              <div class="title-ser">
+                  <h2>Nuestros Servicios</h2>
+              </div>
+          </div>
+          
+          <div class="servicios-cont">
+              <div class="carousel-cont">
+                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                      <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img  src="assets/personalizado.JPG" class="d-block w-100" alt="persona mostrandole indicaciones en una pizarra a otra persona">
+                    </div>
+                    <div class="carousel-item">
+                      <img  src="assets/calificar.jpg" class="d-block w-100" alt="persona escribiendo en una lista sus actividades">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/compra.jpg" class="d-block w-100" alt="figuras pegadas en un reja que hacen referencia a recuerdos">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span style="background-color:black;" class="carousel-control-prev-icon" id="back" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span style="background-color:black;" class="carousel-control-next-icon" id="next" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+               
+              </div>
+                <div class="descripcion-service">
+                  <div class="serve-cont" id="slider-cont">
+                     <div class="cont">
+                          <div class="titulo">
+                              <h3>Detalle Personalizado</h3>
+                              <p style="color: black;">01/03</p>
+                          </div>
+                          <div class="content-info">
+                              <p>
+                                Mediante un enfoque minucioso, se procederá a describir exhaustivamente 
+                                el detalle específico que se desea abordar, ya sea mediante texto o archivos 
+                                complementarios. Este proceso de descripción se llevará a cabo de manera meticulosa
+                                detallada, con el objetivo de brindar una visión completa y precisa de la temática en cuestión.
+                              </p>
+                          </div>
+                     </div>
+                     <div class="cont">
+                          <div class="titulo">
+                              <h3>Calificar Servicio</h3>
+                              <p>02/03</p>
+                          </div>
+                          <div class="content-info">
+                              <p>
+                                En este contexto, se fomentará y facilitará la participación de los usuarios para 
+                                compartir sus valiosas opiniones y calificaciones sobre los servicios que han recibido.
+                                Valoramos profundamente la retroalimentación de nuestros usuarios, ya que nos permite 
+                                evaluar y mejorar constantemente la calidad de nuestros servicios
+                              </p>
+                          </div>
+                      </div>
+                      <div class="cont">
+                          <div class="titulo">
+                              <h3>Compra de Regalo</h3>
+                              <p>03/03</p>
+                          </div>
+                          <div class="content-info">
+                              <p>
+                                En nuestro amplio catálogo, ofrecemos una extensa gama de productos preestablecidos,
+                                diseñados para satisfacer las necesidades y preferencias de nuestros valiosos usuarios.
+                                Estos productos están listos para ser adquiridos de manera conveniente y eficiente, 
+                                brindando una experiencia de compra satisfactoria.
+                              </p>
+                          </div>
+                      </div>
+                      <div class="cont">
+ 
+                      </div>
+                      <div class="cont">
+                      </div>
+                  </div>    
+                </div>
+                
+          </div>
+        
+      </section>
+      <section class="app" id="app">
+          <div class="title-cont-app">
+              <div class="title-app">
+                  <h2>NUESTRA APP</h2>
+              </div>
+          </div>
+          <div class="content-apps">
+              <div class="android">
+                  <h3>Android</h3>
+                  <p style="color: white;">Disponible en Play Store</p>
+                  <button>Descargar</button>
+                  <button id="btn-vermas-android">Ver más</button>
+               
+              </div>
+              <div class="ios">
+                  <h3>iOS</h3>
+                  <p style="color: white;">Disponible en App Store</p>
+                  <button>Descargar</button>
+                  <button id="btn-vermas-ios">Ver más</button>
+                  
+              </div>
+          </div>
+      </section>
+      <section class="soporte" id="soporte">
+          <div class="title-content">
+              <div class="main-title">
+                  <h2>Soporte</h2>
+              </div>
+              
+  
+          </div>
+          <div class="soporte-content">
+              <div class="mensaje">
+                  <div class="title-cont-map">
+                      <h3>Déjanos Saber</h3>
+                      <div class="line-cont-map"></div>
+                  </div>
+                  <div class="content-form">
+                      <div class="nombres">
+                          <div class="mb-3">
+                              <label for="exampleFormControlInput1" class="form-label" style="font-weight:bold ;">Nombres</label>
+                              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Esmeralda ">
+                          </div>
+                          <div class="mb-3 apellido">
+                              <label for="exampleFormControlInput1" class="form-label"  style="font-weight:bold ;">Apellidos</label>
+                              <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="Cienfuegos">
+                          </div>
+                      </div>
+                      <div class="correo-form">
+                          <div class="mb-3">
+                              <label for="exampleFormControlInput1" class="form-label" style="font-weight:bold ;">Correo</label>
+                              <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="nombre@example.com">
+                          </div>
+                      </div>
+                      <div class="mensaje-cont" style="overflow-y: hidden;">
+                          <div class="mb-3" style="overflow-y: hidden;">
+                              <label for="exampleFormControlTextarea1" class="form-label"  style="font-weight:bold ;">Ayudanos a mejorar</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Redacta tu comentario"></textarea>
+                          </div>
+                          <button>Enviar</button>
+                      </div>
+                        
+                  </div>
+                  
+              </div>
+              <div class="content-mapa"> 
+                  <div class="title-cont-map">
+                  <h3 style="overflow: hidden;">Contáctanos</h3>
+                  <div class="line-cont-map"></div>
+                  </div>
+                  <div class="content-map">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.1158860496607!2d-76.965603284037!3d-12.104218346270331!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c70ab77498c1%3A0xcce9f50642e7c684!2sUniversidad%20Peruana%20de%20Ciencias%20Aplicadas!5e0!3m2!1ses-419!2spe!4v1665246661003!5m2!1ses-419!2spe" class="mapa" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                 
+                  <div class="contactanos">
+                      <div class="direccion" style="overflow: hidden;">
+                          <img src="assets/pin.png"><p> Avenida Alameda San Marcos cuadra 2, Chorrillos</p>
+                      </div>
+                      <div class="tel-correo" style="overflow: hidden;">
+                          
+                              <div class="telefono" style="overflow: hidden;">
+                                  <img src="assets/llamada-telefonica.png"><p>Telefono: 999666999</p>
+                              </div>
+                              <div class="correo" style="overflow: hidden;">
+                                  <img src="assets/gmail.png"><p>Correo: GiftService&#64;gmail.com</p>
+                              </div>
+                             
+                         
+                      </div>
+                  </div>
+              </div>
+          </div>
+       
+      </section>
+      <section class="footer">
+          <footer class="content-footer">
+              <div class="top-footer">
+                  <div class="title-footer">
+                      <h3>Gift Service</h3>
+                      <div class="sub-line-footer"></div>
+                  </div>
+                  <div class="list-content">
+                      <ul>
+                          <li style="font-weight: bold;">Aplicación Movil</li>
+                          <li>App Store</li>
+                          <li>Play Store</li>
+                      </ul>
+                      <ul>
+                          <li style="font-weight: bold;">Comunidad</li>
+                          <li>Comentarios</li>
+                          <li>Calificación</li>
+                      </ul>
+                      <ul>
+                          <li style="font-weight: bold;">Empresa</li>
+                          <li>Sobre Nosotros</li>
+                          <li>Contáctanos</li>
+                      </ul>
+                      
+                     
+                  </div>
+              </div>
+              <div class="line-footer"></div>
+              <div class="bottom-footer">
+                  <p>© GiftService, Inc. 2023.</p>
+                  <div class="redes">
+                      <p>Síguenos</p>
+                      <ul>
+                          <li><a href="https://www.facebook.com/"><img src="assets/facebook.png"></a></li>
+                          <li><a href="https://www.tiktok.com/foryou?is_copy_url=1&is_from_webapp=v1"><img src="assets/tik-tok.png"></a></li>
+                          <li><a href="https://www.instagram.com/"><img src="assets/instagram.png"></a></li>
+                      </ul>
+                  </div>
+              </div>
+  
+          </footer>
+      </section>
+      <div class="filtro" id="filtro"></div>
+      <div class="video" id="video-android">
+        <img id="equis-android" class="equis" src="assets/1727490.svg">
+        <iframe id="youtube_player1" class="frame" src="https://www.youtube.com/embed/3R1A_D8OpTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button id="btn-prot-android">Ver prototipo</button>
+      </div>
+      <div class="video" id="video-ios">
+        <img id="equis-ios" class="equis" src="assets/1727490.svg">
+        <iframe id="youtube_player" class="frame" src="https://www.youtube.com/embed/3R1A_D8OpTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button id="btn-prot-ios">Ver prototipo</button>
+      </div>
+    
+      <script src="https://kit.fontawesome.com/c32e161ce9.js" crossorigin="anonymous"></script>
+      <script src="./assets/scripts/scrollreveal.js"></script>
+      <script src="./assets/scripts/script.js"></script>
+      <script src="./assets/scripts/animaciones.js"></script>
+      <script src="./assets/scripts/slider.js"></script>
+      <script src="./assets/scripts/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
+  
+         
