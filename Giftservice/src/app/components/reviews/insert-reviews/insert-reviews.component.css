@@ -1,0 +1,51 @@
+/*  */
+h2{
+    text-align: center;
+    margin-top: 10px;
+}
+h3 {
+    margin: 15px 0px;
+    /* text-align: center; */
+}
+
+
+.container-ponts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contaner-image img {
+    max-width: 100%;
+    height: auto;
+}
+.allStars{
+    align-items: center;
+}
+.rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    width: 100%;
+}
+
+.rating .mat-icon {
+    /* font-size: 3rem; */
+    cursor: pointer;
+    color: #ccc;
+}
+
+.rating .mat-icon.filled {
+    color: #FFD700;
+}
+
+textarea {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+    padding: 5px;
+}
+
+

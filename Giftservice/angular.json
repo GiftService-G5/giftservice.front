@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Giftservice": {
+    "giftServiceFrontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/giftservice",
+            "outputPath": "dist/gift-service-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -22,21 +22,27 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/_redirects"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -58,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Giftservice:build:production"
+              "buildTarget": "giftServiceFrontend:build:production"
             },
             "development": {
-              "buildTarget": "Giftservice:build:development"
+              "buildTarget": "giftServiceFrontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Giftservice:build"
+            "buildTarget": "giftServiceFrontend:build"
           }
         },
         "test": {
@@ -95,6 +101,6 @@
     }
   },
   "cli": {
-    "analytics": "4fe4246d-a45c-400d-aeb6-7a02c0e95542"
+    "analytics": false
   }
 }

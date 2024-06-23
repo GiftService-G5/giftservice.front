@@ -1,0 +1,24 @@
+<div class="title-container">
+    <div class="title">
+      <h1>| Total Productos Comprados en la Fecha |</h1>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <mat-label>Selecciona una fecha</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fecha">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+      <button mat-raised-button type="submit" class="botonReporte">Obtener Reporte</button>
+    </form>
+    <div class="chart-container">
+      <canvas
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [type]="barChartType"
+      ></canvas>
+    </div>
+</div>

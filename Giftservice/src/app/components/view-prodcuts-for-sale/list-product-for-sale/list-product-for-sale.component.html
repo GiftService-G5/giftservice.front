@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+            <div class="row">
+                <h3>Filtro por Categoria</h3>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin" [checked]="selectedCheckbox === 'Hombre'"
+                        (change)="onCheckboxChange('Hombre')">Hombres</mat-checkbox>
+                    <mat-checkbox class="example-margin" [checked]="selectedCheckbox === 'Mujer'"
+                        (change)="onCheckboxChange('Mujer')">Mujeres</mat-checkbox>
+                    <mat-checkbox class="example-margin" [checked]="selectedCheckbox === 'Niños'"
+                        (change)="onCheckboxChange('Niños')">Niños</mat-checkbox>
+                    <mat-checkbox class="example-margin" [checked]="selectedCheckbox === 'Todos'"
+                        (change)="onCheckboxChange('Todos')">Todos</mat-checkbox>
+                </section>
+                
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="container">
+                <!-- <h3>Productos en Venta</h3> -->
+                <div class="row container-card">
+                    <div class="col-3 container-list" *ngFor="let product of liststProducts">
+                        <mat-card>
+                            <img mat-card-image [src]="product.imageRoute" alt="Image of {{ product.nameProduct }}"
+                                [routerLink]="['detailProductForSale', product.idProduct]">
+                            <mat-card-content class="descrptionP">{{ product.nameCategory}}</mat-card-content>
+                            <mat-card-content class="nameP"><b>{{ product.nameProduct }}</b></mat-card-content>
+                            <mat-card-content class="descrptionP">{{ product.descriptionProduct }}</mat-card-content>
+                            <mat-card-content class="priceC">S/<b class="priceP"> {{ product.priceProduct
+                                    }}</b></mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

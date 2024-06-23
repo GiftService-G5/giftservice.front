@@ -1,22 +1,95 @@
-<mat-toolbar color="primary" class="toolbar" >
-    <span>GIFT SERVICE</span>
-    <span class="spacer"></span>
-    <button mat-icon-button aria-label="UserWeb">
-      <mat-icon>account_circle</mat-icon>
-    </button>
-  </mat-toolbar>
-  
-  <div class="container-fluid" >
+
+<!-- *ngIf="verificar()" -->
+<mat-toolbar color="primary" class="toolbar"  *ngIf="verificar()">
+  <div class="container">
     <div class="row">
-      <div class="col-2 sidebar">
-        <nav>
-          <ul>
-            <li><button mat-button routerLink="/moduloUbicacion" >Ubicación</button></li>
-          </ul>
-        </nav>
+      <div class="col-2 d-flex align-items-center">
+        <span>GIFT SERVICE</span>
+        <span class="spacer"></span>
       </div>
-      <div class="content">
-        <router-outlet></router-outlet>
+      <div class="col-8 d-flex align-items-center">
+        <button mat-button routerLink="/viewsProducts" class="btn">Productos En Venta </button>
+
+        <button mat-button [matMenuTriggerFor]="menu1">Productos<mat-icon>arrow_drop_down</mat-icon></button>
+        <mat-menu #menu1="matMenu">
+          <button mat-menu-item routerLink="/products" class="btn">Productos</button>
+          <button mat-menu-item routerLink="/products/listperzonalizedDetailsProduct" class="btn">Productos Con Personalizacion</button>
+          <button mat-menu-item routerLink="/reviews" class="btn">Reseñas</button>
+          <button mat-menu-item routerLink="/personalizedDetail">Detalle Personalizado</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="menu2">Detalles  <mat-icon>arrow_drop_down</mat-icon></button>
+        <mat-menu #menu2="matMenu">
+          <button mat-menu-item routerLink="/moduloUbicacion">Ubicación</button>
+          <button mat-menu-item routerLink="/moduloPagos">Modulo de pagos</button>
+          <button mat-menu-item routerLink="/category">Categoria</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="menu3">Emprendedor  <mat-icon>arrow_drop_down</mat-icon></button>
+        <mat-menu #menu3="matMenu">
+          <button mat-menu-item routerLink="/entrepreneurship">Emprendimiento</button>
+          
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="menu4">Compras  <mat-icon>arrow_drop_down</mat-icon></button>
+        <mat-menu #menu4="matMenu">
+          <button mat-menu-item routerLink="/compras">Compras</button>
+          <button mat-menu-item routerLink="/detallecompras">Detalle Compra</button>
+          <button mat-menu-item routerLink="/notificacion">Notificación</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="menuReportes">
+          Reportes
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #menuReportes="matMenu">
+          <button mat-menu-item routerLink="/reportes/reporteBajoPuntajeATres">Producto con Puntaje Mejor A Tres</button>
+          <button mat-menu-item routerLink="/reportes/reporteCantidadDeTipoEntregaPorCompras">Cantidad de Tipo de entregas</button>
+          <button mat-menu-item routerLink="/reportes/reporteRankingDeCategoria">Ranking de Categorias</button>
+          <button mat-menu-item routerLink="/reportes/reporteRankingTipodePago">Ranking de Tipos de Pago</button>
+          <button mat-menu-item routerLink="/reportes/filtroBestSeller">Productos más vendidos</button>
+          <button mat-menu-item routerLink="/reportes/sumaCantidadPorFechaCompra">Cantidad de Comporas por Fecha</button>
+          <button mat-menu-item routerLink="/reportes/cantidadTotalPorEmprendimiento">Cantidad total por Emprendimiento</button>
+          <button mat-menu-item routerLink="/reportes/comprasPorEmprendimiento">Productos comprados por Emprendimiento</button>
+          
+        </mat-menu>
+      </div>
+      <div class="col-2 d-flex justify-content-end align-items-center">
+        <button mat-button [matMenuTriggerFor]="menu5"><mat-icon>account_circle</mat-icon></button>
+        <mat-menu #menu5="matMenu">
+          <button mat-menu-item routerLink="/login" (click)="cerrar()">
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar sesión</span>
+          </button>
+          <button mat-menu-item>
+            Rol:
+            <span>Rol: falta</span> </button>
+          <button mat-menu-item  >Cerrar Sesion</button>
+        </mat-menu>
+        
       </div>
     </div>
   </div>
+</mat-toolbar>
+<!-- *ngIf="verificar()" -->
+<mat-toolbar color="access" class="toolbar"  *ngIf="verificar()">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <div class="demo-section">
+            <!--Icon with a badge
+            <mat-icon >home</mat-icon>-->
+              <!-- Include text description of the icon's meaning for screen-readers -->
+              <span class="cdk-visually-hidden">
+                <!--Example with a home icon with overlaid badge showing the number 15-->
+              </span>
+          </div>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <button mat-button routerLink="/myCart"><mat-icon matBadge="{{cantidadEnCarrito}}">shopping_cart_checkout</mat-icon></button>
+          <!-- <button mat-button ><mat-icon >account_circle</mat-icon></button> -->
+        </div>
+      </div>
+    </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>¿Cómo calificarías este producto?</h2>
+    <div class="row container-ponts">
+        <div class="col-4 contaner-image">
+            <img [src]="urlImage" alt="Selected Image" class="img-fluid">
+        </div>
+        <div class="col-6 allStars">
+            <h3>{{ product.nameProduct }}</h3>
+            <div class="rating">
+                <mat-icon *ngFor="let star of stars; let i = index" (click)="rateProduct(i + 1)"
+                    [ngClass]="{ 'filled': i < rating }">
+                    star
+                </mat-icon>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <mat-progress-bar mode="buffer"></mat-progress-bar>
+        <form [formGroup]="form">
+
+            <mat-form-field>
+                <mat-label>Describe tu calificación en una frase</mat-label>
+                <input matInput formControlName="frase">
+                <mat-error *ngIf="form.get('frase')?.hasError('required')">Debes poner una frase.</mat-error>
+                <mat-error *ngIf="form.get('frase')?.hasError('maxLength')">Solo es posible 20 
+                    caracteres</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>¿Qué te gustaría decir acerca de este producto?</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+                <mat-error *ngIf="form.get('description')?.hasError('required')">La descripcion es necesario
+                    🥺</mat-error>
+                <mat-error *ngIf="form.get('description')?.hasError('maxLength')">Solo es posible 100
+                    palabras</mat-error>
+            </mat-form-field>
+            
+            <mat-divider></mat-divider>
+            <mat-dialog-actions>
+                <button mat-raised-button [mat-dialog-close] [disabled]="form.invalid" color="primary"
+                    (click)="register()">{{titulo}}</button>
+                <button mat-raised-button [mat-dialog-close] color="warn">Cancel</button>
+            </mat-dialog-actions>
+        </form>
+    </div>
+</div>

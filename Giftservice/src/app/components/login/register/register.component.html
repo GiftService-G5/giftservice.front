@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="Registrar()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre de usuario</mat-label>
+    <input matInput formControlName="nombreUsusario" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Contraseña</mat-label>
+    <input matInput formControlName="contraseña" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre Real</mat-label>
+    <input matInput formControlName="nombreReal" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Apellido</mat-label>
+    <input matInput formControlName="apellido" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" required />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Telefono</mat-label>
+    <input matInput formControlName="telefono" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Direccion</mat-label>
+    <input matInput formControlName="direccion" />
+  </mat-form-field>
+
+  <mat-form-field class="center-select">
+    <mat-label>Ciudad</mat-label>
+    <mat-select formControlName="ciudad">
+        <mat-option *ngFor="let c of listCities" [value]="c.idCity">
+            {{ c.nameCity }}
+          </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary">Register</button>
+</form>

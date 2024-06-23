@@ -1,0 +1,218 @@
+/* IMAGENES DEL PRODCUTO */
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+.main-image img {
+    width: 350px;
+    height: auto;
+}
+
+.nav-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.nav-button.left {
+    left: 0;
+}
+
+.nav-button.right {
+    right: 0;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 100px;
+    height: 100px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* .thumbnails img:hover{
+
+} */
+.thumbnails img.selected {
+    border: 2px solid blue;
+}
+.row-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.row-container .container-galery{
+    min-width: 480px;
+}
+.row-container .container-general-producto{
+    min-width: 480px;
+}
+
+/* ======================================================= */
+
+/* BOTON DE REGISTRAR COMENTARIO */
+
+.container-header-comments {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-register .row .iconos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* este es el card */
+.container-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 370px;
+    height: 100px;
+    border: 2px solid #FFD700;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.fraseP {
+    font-size: 20px;
+}
+
+/* ======================================================== */
+/* Listar de cards */
+.container-coments h3{
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.all-comments {
+    padding: 20px;
+    gap: 20px;
+}
+
+.container-comments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-comment {
+    width: 400px;
+    min-width: 300px;
+}
+
+.card-comment .row .iconos {
+    text-align: end;
+}
+
+.card-comment .row .col-6 mat-card-content b {
+    font-size: 18px;
+}
+
+.iconos .mat-icon {
+    /* font-size: 3rem; */
+    cursor: pointer;
+    color: #ccc;
+}
+
+.iconos .mat-icon.filled {
+    color: #FFD700;
+}
+
+
+/* ================= TODO SOBRE DETALLES DEL PRODUCTOS ===================== */
+.container-detalle-producto{
+    height: auto;
+}
+.count-display,.emprendedor,.nombre-producto,
+.descripcion,
+.precio,
+.count-display,
+col-auto button
+{
+    padding: 0 0;
+    margin: 20px 0 ;
+}
+.count-display {
+    font-size: 2rem;
+    padding: 0 1rem;
+    display: inline-block;
+    text-align: center;
+}
+.emprendedor{
+    font-size: 17px;
+    color: rgb(155, 108, 44);
+}
+.nombre-producto{
+    font-size: 25px;
+}
+.descripcion{
+    font-size: 18px;
+}
+.precio{
+    font-size: 30px;
+    color: #df0f0f;
+}
+.container-calculo-cantidad{
+    display: flex;
+    background-color: rgb(202, 202, 202);
+    margin: 5px 0;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-calculo-cantidad .col-6{
+    min-width: 150px;
+}
+.col-auto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col-auto button{
+    margin: 2px;
+    padding: 0;
+    border-color: #df0f0f;  
+
+}
+.btn-carrito{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFD700;
+    border-radius: 15px;
+    width: 220px;
+    height: 60px;
+    min-width: 150px;
+    border-color: none;
+
+}   
+.btn-carrito p, .btn-carrito mat-icon{
+    align-items: center;
+    text-align: center;
+}
+

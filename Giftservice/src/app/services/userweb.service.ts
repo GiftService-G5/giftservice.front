@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Subject, tap } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { UserWeb } from '../models/UserWeb';
 
 const base_url = environment.base;
@@ -25,7 +25,6 @@ export class UserwebService {
     return this.http.post(this.url, i).pipe(
       tap(() => this.list().subscribe()));
   }
-
   setList(listaNueva: UserWeb[]) {
     this.listaCambio.next(this.sortList(listaNueva));
   }
@@ -41,5 +40,9 @@ export class UserwebService {
   }
   update(rt:UserWeb) { 
     return this.http.put(this.url, rt);
+  }
+  
+  encontrarUltimoUsuario(): Observable<number> {
+    return this.http.get<number>(`${this.url}/ultimoUsuario`);
   }
 }
